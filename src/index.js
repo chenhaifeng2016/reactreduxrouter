@@ -4,14 +4,14 @@ import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 
 
-
+//定义组件
 class App extends Component{
     render() {
         const {text, onChangeText, onButtonClick} = this.props;
         return (
             <div>
                 <h1 onClick={onChangeText}> {text} </h1>
-                <button onClick={onButtonClick}>change</button>
+                <button onClick={onButtonClick}>click me</button>
             </div>
         );
     }
@@ -65,6 +65,7 @@ function mapDispatchToProps(dispatch){
 //连接组件
 App = connect(mapStateToProps, mapDispatchToProps)(App)
 
+//渲染组件
 ReactDOM.render(
     <Provider store={store}>
         <App />
